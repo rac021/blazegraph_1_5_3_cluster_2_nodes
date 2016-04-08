@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <attachartifact file="ant-build/bigdata-1.5.3.jar" type="jar"/>
+</target>
+</project>
