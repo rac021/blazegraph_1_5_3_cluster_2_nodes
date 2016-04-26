@@ -1,8 +1,10 @@
+
+## Pre configured Blazegraph Cluster with TWO DataServices.
+
 ## Welcome to Blazegraph
 
 Blazegraph™ is our ultra high-performance graph database supporting Blueprints and RDF/SPARQL APIs. It supports up to 50 Billion edges on a single machine and has a High Availability and Scale-out architecture. It is in production use for Fortune 500 customers such as EMC, Autodesk, and many others.  It powers the Wikimedia Foundation's Wiki Data Query Service.  See the latest [Feature Matrix](http://www.blazegraph.com/blazegraph#FeatureMatrix).
 
-![image](http://www.blazegraph.com/static/images/blazegraph_by_systap.png)
 
 Please see the release notes in [bigdata/src/releases](bigdata/src/releases) for getting started links.
 
