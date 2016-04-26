@@ -29,11 +29,6 @@ RUN echo " ** Install tools "  && \
     chown -R anaee:anaee nas && \
     chown -R anaee:anaee data
     
-    # to use sudo 
-    #echo "import pty; pty.spawn('/bin/bash')" > /tmp/asdf.py && \
-    #python /tmp/asdf.py && \
-    #echo "anaee	ALL=(ALL:ALL) ALL" >> /etc/sudoers -y
-    
 USER anaee
 
 RUN echo " ** Install Blazegraph_1_5_3 "  && \
@@ -45,3 +40,4 @@ RUN echo " ** Install Blazegraph_1_5_3 "  && \
 WORKDIR /nas/bigdata/benchmark/bin
 
 ENTRYPOINT ./bigdata
+
