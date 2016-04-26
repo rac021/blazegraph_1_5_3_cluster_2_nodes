@@ -1,5 +1,7 @@
 #!/bin/bash
 
+docker network create --subnet=192.168.56.250/24 mynet123
+
 docker run -d --net mynet123 --name host_2 \
        --add-host host_0:192.168.56.100    \
        --add-host host_1:192.168.56.101    \ 
