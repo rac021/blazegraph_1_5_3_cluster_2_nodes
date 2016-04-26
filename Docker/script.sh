@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Run bigdata cluster using host_2 as EndPoint
+
 docker network create --subnet=192.168.56.250/24 mynet123
 
 docker run -d --net mynet123 --name host_2 \
