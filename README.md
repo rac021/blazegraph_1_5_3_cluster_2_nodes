@@ -5,13 +5,13 @@ No need to download the entire project ( Docker folder is sufficient )
 
 Steps :
 
-   1 - cd blazegraph_1_5_3_cluster_2_nodes/Docker
- 
-   2 - docker build -t blazegraph .
- 
-   3 - ./script.sh
-
-
+    - cd blazegraph_1_5_3_cluster_2_nodes/Docker
+    
+    - docker build -t blazegraph .
+    
+    -  ./script.sh
+    
+  
 # Welcome to Blazegraph
 
 Blazegraph™ is our ultra high-performance graph database supporting Blueprints and RDF/SPARQL APIs. It supports up to 50 Billion edges on a single machine and has a High Availability and Scale-out architecture. It is in production use for Fortune 500 customers such as EMC, Autodesk, and many others.  It powers the Wikimedia Foundation's Wiki Data Query Service.  See the latest [Feature Matrix](http://www.blazegraph.com/blazegraph#FeatureMatrix).
