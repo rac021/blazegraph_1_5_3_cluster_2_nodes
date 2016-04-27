@@ -40,3 +40,4 @@ RUN echo " ** Install Blazegraph_1_5_3 "  && \
 WORKDIR /nas/bigdata/benchmark/bin
 
 ENTRYPOINT ./bigdata
+
