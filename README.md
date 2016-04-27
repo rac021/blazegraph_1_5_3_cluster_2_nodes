@@ -5,12 +5,12 @@ No need to download the entire project ( Docker folder is sufficient )
 
 Steps :
 
- 1 - cd blazegraph_1_5_3_cluster_2_nodes/Docker
+   1 - cd blazegraph_1_5_3_cluster_2_nodes/Docker
  
- 2 - docker build -t blazegraph .
+   2 - docker build -t blazegraph .
  
- 3 - ./script.sh
-  
+   3 - ./script.sh
+
 
 # Welcome to Blazegraph
 
