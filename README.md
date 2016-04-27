@@ -9,7 +9,7 @@ Steps :
     
     - docker build -t blazegraph .
     
-    -  ./script.sh
+    - ./script.sh
     
   
 # Welcome to Blazegraph
