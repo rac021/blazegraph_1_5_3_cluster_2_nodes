@@ -18,7 +18,6 @@
     echo "---------------------"
   done
 
-
 #curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode                                         \
 #'query=SELECT ( COUNT(?s) AS ?count ) where { ?s ?p ?o }  ' -H 'Accept:text/tab-separated-values'
 
