@@ -42,7 +42,7 @@
 #?soluteObservation . } ORDER BY ?uriVariableSynthesis ' -H 'Accept:text/tab-separated-values'
 
 #turtle
-#curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode 'query=PREFIX :                             \
+#curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode 'query=PREFIX :                              \
 #<http://www.anaee/fr/soere/ola#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>                              \
 #PREFIX oboe-core: <http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#> SELECT DISTINCT                              \
 #?uriVariableSynthesis ?variableName ?year  ?count   WHERE { ?uriVariableSynthesis a oboe-core:Observation ;             \
@@ -84,7 +84,7 @@
 #curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode 'query=PREFIX rdfs:             \
 #<http://www.w3.org/2000/01/rdf-schema#> PREFIX : <http://www.anaee/fr/soere/ola#> PREFIX oboe-core:        \
 #<http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#> SELECT ?uriVariableSynthesis ?measu ?value        \
-# { ?uriVariableSynthesis a oboe-core:Observation ; oboe-core:ofEntity :VariableSynthesis ;                  \
+# { ?uriVariableSynthesis a oboe-core:Observation ; oboe-core:ofEntity :VariableSynthesis ;                 \
 #oboe-core:hasMeasurement ?measu . ?measu oboe-core:hasValue ?value . Filter ( regex( ?value, "ph", "i"))}' \
 #-H 'Accept:application/rdf+xml' | gzip > ola_01.nt
 
@@ -112,3 +112,4 @@
 
 #curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode "query=SELECT ?o \ 
 # { ?s ?p ?o } LIMIT 1"  -H 'Accept:application/rdf+xml'
+
