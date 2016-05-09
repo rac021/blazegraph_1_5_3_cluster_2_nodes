@@ -84,7 +84,7 @@
 #curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode 'query=PREFIX rdfs:             \
 #<http://www.w3.org/2000/01/rdf-schema#> PREFIX : <http://www.anaee/fr/soere/ola#> PREFIX oboe-core:        \
 #<http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#> SELECT ?uriVariableSynthesis ?measu ?value        \
-#{ ?uriVariableSynthesis a oboe-core:Observation ; oboe-core:ofEntity :VariableSynthesis ;                  \
+# { ?uriVariableSynthesis a oboe-core:Observation ; oboe-core:ofEntity :VariableSynthesis ;                  \
 #oboe-core:hasMeasurement ?measu . ?measu oboe-core:hasValue ?value . Filter ( regex( ?value, "ph", "i"))}' \
 #-H 'Accept:application/rdf+xml' | gzip > ola_01.nt
 
@@ -111,4 +111,4 @@
 #LIMIT 1" -H "Accet:application/sparql-results+json"
 
 #curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode "query=SELECT ?o \ 
-#{ ?s ?p ?o } LIMIT 1"  -H 'Accept:application/rdf+xml'
+# { ?s ?p ?o } LIMIT 1"  -H 'Accept:application/rdf+xml'
