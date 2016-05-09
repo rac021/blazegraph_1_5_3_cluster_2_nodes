@@ -1,7 +1,7 @@
 #!/bin/bash
 
-  endPoint=$1 # ex : 'http://localhost:9999/blazegraph/sparql'
-  data_dir=$2 # ex : /out/store
+  endPoint=$1    # ex : 'http://192.168.56.200:8080/blazegraph/sparql'
+  data_dir=$2    # ex : /out/store
 
   java -server -Xms5g -Xmx5g  -Djetty.port=8080 -jar blazegraph.jar &
   sleep 5  # Waits 5 seconds.
@@ -110,6 +110,6 @@
 #curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode "query=SELECT ?o { ?s ?p ?o } \
 #LIMIT 1" -H "Accet:application/sparql-results+json"
 
-#curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode "query=SELECT ?o \ 
+#curl -X POST http://192.168.56.200:8080/blazegraph/sparql --data-urlencode "query=SELECT ?o              \ 
 # { ?s ?p ?o } LIMIT 1"  -H 'Accept:application/rdf+xml'
 
