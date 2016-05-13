@@ -11,6 +11,8 @@ Steps :
     
     - ./script.sh
     
+    - ./scriptRequest.sh "http://192.168.56.200:8080/blazegraph/sparql"/out/store
+    
   
 # Welcome to Blazegraph
 
