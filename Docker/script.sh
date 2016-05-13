@@ -2,6 +2,8 @@
 
 # Run bigdata cluster using host_2 as EndPoint
 
+# docker build -t blazegraph .
+
 # Docker version min : 1.10 
 docker network create --subnet=192.168.56.250/24 mynet123
 
@@ -27,5 +29,3 @@ docker run -d --net mynet123 --name host_0 \
        -it --entrypoint /bin/bash blazegraph -c "./bigdata start; while true; do sleep 1000; done "
        
 docker exec host_2 ./nanoSparqlServer.sh 9999 ola 
-
-
