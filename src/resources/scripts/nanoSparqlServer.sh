@@ -24,6 +24,7 @@ nthreads=64
 echo "port=$port namespace=$namespace config=$BIGDATA_CONFIG"
 
 java ${JAVA_OPTS} \
+    -Djetty.overrideWebXml=./overrideWebXml/webWithConfReadOnly.xml \
     -cp ${CLASSPATH} \
     com.bigdata.rdf.sail.webapp.NanoSparqlServer \
 	-nthreads $nthreads \
