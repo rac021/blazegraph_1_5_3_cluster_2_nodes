@@ -7,8 +7,29 @@
 
 source `dirname $0`/bigdataenv
 
+if [ $# -eq 3 ]; then
+
 port=$1
 namespace=$2
+
+#rw or ro ( readOnly )
+readOnly=$3
+#grep -l "web.xml" *.jar
+#jar uf bigdata-1.5.0-20160520.jar bigdata-war/src/WEB-INF/web.xml
+ 
+if [ ! -z "$readOnly" ]; then
+    
+   if [ "$readOnly" = "ro" ]; then 
+     echo "run in mode ReadOnly " 	
+   if
+   
+   if [ "$readOnly" = "rw" ]; then 
+     echo "run in mode Read-Write " 
+     # JAR_TO_UPDATE=`grep -l "web.xml" ../lib/*.jar`
+   if
+   
+fi
+
 
 # Note: This will cause the NanoSparqlServer instance to ping the lastCommitTime
 # on the federation. This provides more efficient query since all queries issued
@@ -23,8 +44,6 @@ nthreads=64
 
 echo "port=$port namespace=$namespace config=$BIGDATA_CONFIG"
 
-#jar uf bigdata-1.5.0-20160520.jar bigdata-war/src/WEB-INF/web.xml
-
 java ${JAVA_OPTS} \
    -cp ${CLASSPATH} \
     com.bigdata.rdf.sail.webapp.NanoSparqlServer \
@@ -32,6 +51,7 @@ java ${JAVA_OPTS} \
     $port \
     $namespace \
     ${BIGDATA_CONFIG} ${BIGDATA_CONFIG_OVERRIDES}
+
 
 #java ${JAVA_OPTS} \
 #    -cp ${CLASSPATH} \
@@ -41,3 +61,12 @@ java ${JAVA_OPTS} \
 #    $port \
 #    $namespace \
 #    ${BIGDATA_CONFIG} ${BIGDATA_CONFIG_OVERRIDES}
+
+else
+    echo "invalid argument : please pass exactly three arguments   "
+    echo " arg_1 : port                                            "
+    echo " arg_2 : namespacee                                      "
+    echo " arg_2 : ro ( readOnly) // rw ( read-write ) mode        "
+    
+fi
+
