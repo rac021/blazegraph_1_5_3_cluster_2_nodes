@@ -21,15 +21,14 @@ if [ ! -z "$readOnly" ]; then
     
    if [ "$readOnly" = "ro" ]; then 
      echo "run in mode ReadOnly " 	
-   if
+   fi
    
    if [ "$readOnly" = "rw" ]; then 
      echo "run in mode Read-Write " 
      # JAR_TO_UPDATE=`grep -l "web.xml" ../lib/*.jar`
-   if
+   fi
    
 fi
-
 
 # Note: This will cause the NanoSparqlServer instance to ping the lastCommitTime
 # on the federation. This provides more efficient query since all queries issued
