@@ -19,7 +19,7 @@ readOnly=$3
  
 if [ ! -z "$readOnly" ]; then
    
-   if [ "$readOnly" = "ro" ]; then
+  if [ "$readOnly" = "ro" ]; then
      echo " Starting in ReadOnly mode.. "
      CURRENT_JAR=`grep -l "web.xml" ../lib/*.jar`
      echo "------------------------------"
@@ -27,10 +27,9 @@ if [ ! -z "$readOnly" ]; then
      echo "-----------------------------"
      mkdir -p bigdata-war/src/WEB-INF && \
      # Copy web.xml ( ReadOnly Mode )
-     cp overrideWebXml/webWithConfReadOnly.xml \ 
-        bigdata-war/src/WEB-INF/web.xml
+     cp overrideWebXml/webWithConfReadOnly.xml bigdata-war/src/WEB-INF/web.xml
 
-    elif [ "$readOnly" = "rw" ]; then
+  elif [ "$readOnly" = "rw" ]; then
      echo " Starting in Read-Write mode.."
      CURRENT_JAR=`grep -l "web.xml" ../lib/*.jar`
      echo "------------------------------"
@@ -38,12 +37,13 @@ if [ ! -z "$readOnly" ]; then
      echo "-----------------------------"
      mkdir -p bigdata-war/src/WEB-INF && \
      # Copy web.xml ( Read-Write Mode )
-     cp overrideWebXml/web.xml \ 
-        bigdata-war/src/WEB-INF/web.xml
+     cp overrideWebXml/web.xml  bigdata-war/src/WEB-INF/web.xml
   
-    else 
+  else 
      echo " ReadWrite Mode : ro ( ReadOnly ) - rw ( Read-Write ) "
      exit 3
+  fi
+
 fi
 
 # Update Jar defor deployment
