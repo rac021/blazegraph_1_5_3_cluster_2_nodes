@@ -18,17 +18,38 @@ readOnly=$3
 #jar uf bigdata-1.5.0-20160520.jar bigdata-war/src/WEB-INF/web.xml
  
 if [ ! -z "$readOnly" ]; then
-    
-   if [ "$readOnly" = "ro" ]; then 
-     echo "run in mode ReadOnly " 	
-   fi
    
-   if [ "$readOnly" = "rw" ]; then 
-     echo "run in mode Read-Write " 
-     # JAR_TO_UPDATE=`grep -l "web.xml" ../lib/*.jar`
-   fi
-   
+   if [ "$readOnly" = "ro" ]; then
+     echo " Starting in ReadOnly mode.. "
+     CURRENT_JAR=`grep -l "web.xml" ../lib/*.jar`
+     echo "------------------------------"
+     echo " updating $CURRENT_JAR .. "
+     echo "-----------------------------"
+     mkdir -p bigdata-war/src/WEB-INF && \
+     # Copy web.xml ( ReadOnly Mode )
+     cp overrideWebXml/webWithConfReadOnly.xml \ 
+        bigdata-war/src/WEB-INF/web.xml
+
+    elif [ "$readOnly" = "rw" ]; then
+     echo " Starting in Read-Write mode.."
+     CURRENT_JAR=`grep -l "web.xml" ../lib/*.jar`
+     echo "------------------------------"
+     echo " updating $CURRENT_JAR .. "
+     echo "-----------------------------"
+     mkdir -p bigdata-war/src/WEB-INF && \
+     # Copy web.xml ( Read-Write Mode )
+     cp overrideWebXml/web.xml \ 
+        bigdata-war/src/WEB-INF/web.xml
+  
+    else 
+     echo " ReadWrite Mode : ro ( ReadOnly ) - rw ( Read-Write ) "
+     exit 3
 fi
+
+# Update Jar defor deployment
+  jar uf $CURRENT_JAR bigdata-war/src/WEB-INF/web.xml
+  rm -rf bigdata-war
+    
 
 # Note: This will cause the NanoSparqlServer instance to ping the lastCommitTime
 # on the federation. This provides more efficient query since all queries issued
@@ -50,7 +71,6 @@ java ${JAVA_OPTS} \
     $port \
     $namespace \
     ${BIGDATA_CONFIG} ${BIGDATA_CONFIG_OVERRIDES}
-
 
 #java ${JAVA_OPTS} \
 #    -cp ${CLASSPATH} \
