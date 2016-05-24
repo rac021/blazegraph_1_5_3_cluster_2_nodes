@@ -169,6 +169,6 @@
   </servlet-mapping>
   <!-- Map the initial request into the UI. -->
   <welcome-file-list>
-    <welcome-file>html/404.html</welcome-file>
+    <welcome-file>html/index.html</welcome-file>
   </welcome-file-list>
 </web-app>
