@@ -29,3 +29,5 @@ docker run -d --net mynet123 --name host_0 \
        -it --entrypoint /bin/bash blazegraph -c "./bigdata start; while true; do sleep 1000; done "
        
 docker exec host_2 ./nanoSparqlServer.sh 9999 ola 
+
+
