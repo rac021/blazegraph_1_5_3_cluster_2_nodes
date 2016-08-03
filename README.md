@@ -11,7 +11,7 @@ Steps :
     
     - ./script.sh
     
-    - ./scriptRequest.sh "http://192.168.56.200:8080/blazegraph/sparql" /directoryFile
+    - ./scriptLoader.sh "http://192.168.56.200:8080/blazegraph/sparql" /directoryFile
     
   
 # Welcome to Blazegraph
