@@ -64,6 +64,12 @@ nthreads=64
 
 echo "port=$port namespace=$namespace config=$BIGDATA_CONFIG"
 
+# Remote Debuging 
+export JAVA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
+export JPDA_ADDRESS=8000
+export JPDA_TRANSPORT=dt_socket
+
+
 java ${JAVA_OPTS} \
    -cp ${CLASSPATH} \
     com.bigdata.rdf.sail.webapp.NanoSparqlServer \
