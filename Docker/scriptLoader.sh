@@ -1,6 +1,6 @@
 #!/bin/bash
 
-  endPoint=$1    # ex : 'http://192.168.56.200:8080/blazegraph/sparql'
+  endPoint=$1    # ex : 'http://192.168.56.102:8080/blazegraph/sparql'
   data_dir=$2    # ex : /out/store
 
   java -server -Xms5g -Xmx5g  -Djetty.port=8080 -jar blazegraph.jar &
