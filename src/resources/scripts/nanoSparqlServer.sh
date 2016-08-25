@@ -20,7 +20,9 @@ readOnly=$3
 if [ ! -z "$readOnly" ]; then
    
   if [ "$readOnly" = "ro" ]; then
+     echo
      echo " Starting in ReadOnly mode.. "
+     echo
      CURRENT_JAR=`grep -l "web.xml" ../lib/*.jar`
      echo "------------------------------"
      echo " updating $CURRENT_JAR .. "
@@ -88,10 +90,11 @@ java ${JAVA_OPTS} \
 #    ${BIGDATA_CONFIG} ${BIGDATA_CONFIG_OVERRIDES}
 
 else
+    echo
     echo "invalid argument : please pass exactly three arguments   "
     echo " arg_1 : port                                            "
     echo " arg_2 : namespacee                                      "
     echo " arg_2 : ro ( readOnly) // rw ( read-write ) mode        "
-    
+    echo 
 fi
 
