@@ -27,7 +27,7 @@ RUN echo " ** Install tools "  && \
     mkdir nas && \
     mkdir data && \
     chown -R anaee:anaee nas && \
-    chown -R anaee:anaee data
+    chown -R anaee:anaee data 
     
 USER anaee
 
@@ -35,11 +35,7 @@ RUN echo " ** Install Blazegraph_1_5_3 "  && \
     cd /tmp && \
     git clone https://github.com/rac021/blazegraph_1_5_3_cluster_2_nodes && \    
     cd /tmp/blazegraph_1_5_3_cluster_2_nodes && \
-    ant clean install && \
-    mkdir -p /nas/bigdata/benchmark/bin/overrideWebXml && \
-    echo " ** Copy OverrideWebXml file "  && \
-    cp /tmp/blazegraph_1_5_3_cluster_2_nodes/bigdata-war/src/WEB-INF/webWithConfReadOnly.xml \ 
-    /nas/bigdata/benchmark/bin/overrideWebXml 
+    ant -Dlog4j.configuration=bigdata/src/resources/logging/log4j.properties clean install
     
 WORKDIR /nas/bigdata/benchmark/bin
 
