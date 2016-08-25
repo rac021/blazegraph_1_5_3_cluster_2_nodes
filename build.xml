@@ -210,6 +210,12 @@ public class BuildInfo {
     <target name="compile" depends="prepare, buildinfo"
         description="Compile the code base.">
         <mkdir dir="${build.dir}" />
+        
+        <!-- Add By Rac -->
+         <copy file="${log4j.configuration}"
+               todir="${build.dir}/classes" />
+        <!-- End Rac -->
+        
         <echo>javac</echo>
         <echo>    destdir="${build.dir}"</echo>
         <echo>    fork="yes"</echo>
