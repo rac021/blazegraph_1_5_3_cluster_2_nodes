@@ -35,7 +35,7 @@ RUN echo " ** Install Blazegraph_1_5_3 "  && \
     cd /tmp && \
     git clone https://github.com/rac021/blazegraph_1_5_3_cluster_2_nodes && \    
     cd /tmp/blazegraph_1_5_3_cluster_2_nodes && \
-    ant -Dlog4j.configuration=src/resources/config/log4j.properties clean install
+    ant -Dlog4j.configuration=src/resources/config/log4j.properties clean install 
     # ant -Dlog4j.configuration=bigdata/src/resources/logging/log4j.properties clean install
     
 WORKDIR /nas/bigdata/benchmark/bin
