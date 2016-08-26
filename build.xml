@@ -212,8 +212,53 @@ public class BuildInfo {
         <mkdir dir="${build.dir}" />
         
         <!-- Add By Rac -->
-         <copy file="${log4j.configuration}"
-               todir="${build.dir}/classes" />
+        
+        <copy file="${log4j.configuration}"
+              todir="${build.dir}/classes" />
+               
+        <replace dir="${build.dir}/classes" summary="true">
+         <replacefilter token="@FED@" value="${FED}" />
+         <replacefilter token="@NAS@" value="${NAS}" />
+         <replacefilter token="@LAS@" value="${LAS}" />
+         <replacefilter token="@LOG4J_SOCKET_LOGGER_HOST@" value="${LOG4J_SOCKET_LOGGER_HOST}" />
+         <replacefilter token="@JAVA_HOME@" value="${JAVA_HOME}" />
+         <replacefilter token="@JINI_CLASS_SERVER_PORT@" value="${JINI_CLASS_SERVER_PORT}" />
+         <replacefilter token="@LOAD_BALANCER_PORT@" value="${LOAD_BALANCER_PORT}" />
+         <replacefilter token="@REPORT_ALL@" value="${REPORT_ALL}" />
+         <replacefilter token="@SYSSTAT_HOME@" value="${SYSSTAT_HOME}" />
+         <replacefilter token="@USE_NIO@" value="${USE_NIO}" />
+         <replacefilter token="@BIN_DIR@" value="${install.bin.dir}" />
+         <replacefilter token="@LIB_DIR@" value="${install.lib.dir}" />
+         <replacefilter token="@LOG_DIR@" value="${install.log.dir}" />
+         <replacefilter token="@CONFIG_DIR@" value="${install.config.dir}" />
+         <replacefilter token="@INSTALL_USER@" value="${install.user}" />
+         <replacefilter token="@INSTALL_GROUP@" value="${install.group}" />
+         <replacefilter token="@LOCK_CMD@" value="${LOCK_CMD}" />
+         <replacefilter token="@LOCK_FILE@" value="${LOCK_FILE}" />
+         <replacefilter token="@BIGDATA_CONFIG@" value="${bigdata.config}" />
+         <replacefilter token="@JINI_CONFIG@" value="${jini.config}" />
+         <replacefilter token="@POLICY_FILE@" value="${policyFile}" />
+         <replacefilter token="@LOG4J_SOCKET_LOGGER_HOST@" value="${LOG4J_SOCKET_LOGGER_HOST}" />
+         <replacefilter token="@LOG4J_SOCKET_LOGGER_PORT@" value="${LOG4J_SOCKET_LOGGER_PORT}" />
+         <replacefilter token="@LOG4J_SOCKET_LOGGER_CONFIG@" value="${log4jServer.config}" />
+         <replacefilter token="@LOG4J_DATE_PATTERN@" value="${LOG4J_DATE_PATTERN}" />
+         <replacefilter token="@LOG4J_CONFIG@" value="${log4j.config}" />
+         <replacefilter token="@LOGGING_CONFIG@" value="${logging.config}" />
+         <replacefilter token="@ERROR_LOG@" value="${errorLog}" />
+         <replacefilter token="@DETAIL_LOG@" value="${detailLog}" />
+         <replacefilter token="@EVENT_LOG@" value="${eventLog}" />
+         <replacefilter token="@RULE_LOG@" value="${ruleLog}" />
+         <replacefilter token="@STATE_LOG@" value="${stateLog}" />
+         <replacefilter token="@STATE_FILE@" value="${stateFile}" />
+         <replacefilter token="@FORCE_KILL_ALL@" value="${forceKillAll}" />
+         <replacefilter token="@NTP_MASTER@" value="${NTP_MASTER}" />
+         <replacefilter token="@NTP_NETWORK@" value="${NTP_NETWORK}" />
+         <replacefilter token="@NTP_NETMASK@" value="${NTP_NETMASK}" />
+         <replacefilter token="@CLASSPATH@" value="${myclasspath}" />
+         <!-- updates the configuration file to locate the lubm ontology. -->
+         <replacefilter token="@install.lubm.config.dir@" value="${install.lubm.config.dir}" />
+        </replace>
+        
         <!-- End Rac -->
         
         <echo>javac</echo>
