@@ -15,6 +15,7 @@ Steps :
     
   
 #### Docker Hub : https://hub.docker.com/r/rac021/blz_cluster_2_nodes
+#### And play with docker for test : https://labs.play-with-docker.com
 
 
 # Welcome to Blazegraph
